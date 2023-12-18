@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+    <style>
+        #demo{
+            text-align: center;
+            margin-top: 300px;
+            font-size: 70px;
+            color:whitesmoke;
+        }
+    </style>
+   
+</head>
+<body >
+<div id="demo">
+    <span id="hr">00</span>:<span id="min">00</span>:<span id="tens">00</span>:<span id="ones">00</span>
+    <br>
+    <br>
+    <button id="start">start</button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button id="stop">stop</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button id="reset">reset</button>
+</div>
+
+
+
+<script>
+   var onecount =0 ;
+   var tencount = 0;
+   var mincount = 0;
+   var hrcount = 0;
+   var appendones = document.getElementById('ones');
+   var appendtens = document.getElementById('tens');
+   var appendmin =document.getElementById('min')
+   var appendhr =document.getElementById('hr')
+   var  button1 = document.getElementById('start') ;
+   var button2 = document.getElementById('stop');
+   var button3 = document.getElementById('reset');
+
+  
+   function timer(){
+   onecount++;
+   if(onecount <9){
+    appendones.innerHTML = '0'+ onecount;
+   }
+   if(onecount >9){
+    appendones.innerHTML = onecount;
+   }
+   if(onecount >99){
+    tencount++;
+    appendtens.innerHTML = "0" + tencount;
+    onecount =0;
+    appendones.innerHTML = "0" + 0;
+   }
+   if(tencount >9){
+    appendtens.innerHTML = tencount;
+   }
+   if(tencount > 60){
+    mincount++;
+    appendmin.innerHTML = "0"+ mincount;
+    tencount = 0;
+    appendtens.innerHTML=tencount;
+   }
+   if(mincount >9){
+    appendmin.innerHTML =mincount;
+   }
+   if(mincount > 60){
+    hrcount++;
+    appendhr.innerHTML = "0"+ hrcount;
+    mincount = 0;
+    appendmin.innerHTML = mincount;
+   }
+   if(hrcount >9){
+    appendhr.innerHTML = hrcount;
+   }
+   
+
+}
+ button1.onclick = function (){
+    interval = setInterval(timer,10);
+ }
+  button2.onclick = function (){
+    clearInterval(interval);
+  }
+  button3.onclick = function(){
+    clearInterval(interval);
+    onecount = '00';
+    tencount = '00';
+    appendones.innerHTML = onecount;
+    appendtens.innerHTML = tencount;
+  }
+        
+              
+
+      
+        
+     
+  
+
+    
+
+
+     
+    
+   
+
+    
+
+   
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+body{
+    
+    background-image: url('time.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+
+}
+
+
+#start{
+  padding: 1%; 
+  width: 10%;
+  font-size: 25px;
+  font-weight: bolder;
+  background-color: green;
+  color: white;
+  border: none;
+}
+#stop{
+    padding: 1%;
+    width: 10%;
+    margin-right: 3%;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: red;
+    color:beige;
+    border: none;
+}
+#reset{
+    padding: 1%;
+    width: 10%;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: yellow;
+    color: black;
+    border: none;
+}
+
+
